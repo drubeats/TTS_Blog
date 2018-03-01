@@ -1,0 +1,29 @@
+<h1>Here is my About Page</h1>
+<p>cool stuff happens here</p>
+
+<!-- This is not the best way of doing it,  internal style sheets kind of suck lolz -->
+
+<style>
+
+  #color_me_in {
+    background-color: <%= @color %>;
+    color: white;
+    width: 250px;
+    height: 250px;
+
+}
+</style>
+<div id= "color_me_in">
+  <p>
+    <% if @color != nil %>
+    <%= @color.upcase %> Box Activated!
+    <% end %>
+  </p>
+</div>
+
+<!-- here's where all the stuff we did previously is (css & div w/ id) -->
+
+<%= form_tag index_path do %>
+  <p><%= text_field_tag :name, nil, placeholder: "What's your name?" %></p>
+  <p><%= submit_tag :submit %></p>
+<% end %>
